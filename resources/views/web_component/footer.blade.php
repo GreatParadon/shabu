@@ -1,7 +1,7 @@
 <style>
     footer {
-        background-color: #050412;
-        color: #ffffff;
+        background-color: #2b2b2b;
+        color: #FFFFFF;
         bottom: 0;
         height: auto;
     }
@@ -13,82 +13,62 @@
     }
 
     .footer-middle {
-        text-align: center;
+        text-align: left;
         padding-top: 50px;
         padding-bottom: 50px;
     }
 
-    .footer-side {
+    .footer-left {
         padding-top: 20px;
         padding-bottom: 20px;
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 20px;
     }
 
-    .footer-side a {
-        font-size: 20px;
-        color: #FFFFFF;
-        display: block;
-        margin-bottom: 20px;
+    .footer-right {
+        padding-top: 20px;
+        text-align: right;
     }
 
-    .footer-side a:hover {
-        color: #FFFFFF;
-        text-decoration: none;
+    .shabu-social a {
+        float: right;
+        margin-bottom: 10px;
+
     }
 
-    .footer-side a:visited {
-        color: #FFFFFF;
-        text-decoration: none;
+    .shabu-social a img {
+        width: 70%;
     }
 
-    .footer-side a:active {
-        color: #FFFFFF;
-        text-decoration: none;
-    }
-
-    .footer-side a:link {
-        color: #FFFFFF;
-        text-decoration: none;
+    .shabu-contact {
+        clear: right;
     }
 </style>
 <footer class="container-fluid">
     <div class="row">
-        <div class="col-md-4 footer-side">
-            <h3>
-                Wasant Studio
-            </h3>
-            <hr align="left" width="100%">
-            <p>Wasant studio สาขา 1 เทเวศน์<br>
-                88-90 ถนนประชาธิปไตย แขวงบางขุนพรหม เขตพระนคร กทม. 10200<br>
-                โทร. 02-2826848 </p>
-            <hr align="left" width="100%">
-            <p>Wasant studio สาขา 2 หน้ามหาวิทยาลัยสยาม<br>
-                85, 87 ถนนเพชรเกษม แขวงบางหว้า เขตภาษีเจริญ กทม. 10160<br>
-                (ตรงข้ามมหาวิทยาลัยสยาม)
-                โทร. 0-2868-9686-88</p>
-            <hr align="left" width="100%">
-            <p>Wasant studio สาขา 3 ท่าพระ<br>
-                465-9 ถนนรัชดา-ท่าพระ แขวงบุคคโล เขตธนบุรี กทม 10600<br>
-                โทร. 02-878 8988 / 090-984 8615</p>
-
+        <div class="col-md-2 footer-left">
+            <img src="{{ asset('resources/header').'/logo.png' }}">
         </div>
         <div class="col-md-4 footer-middle">
-            <h4>" ทีมงานคุณภาพที่มี ประสบการณ์ ยาวนานกว่า 20 ปี "</h4>
-            <img src="{{ asset('resources/header').'/logo.png' }}">
-            <hr width="70%">
-            <p>Copyright xxxxxxxxxxxxxxxxxxxxx<br>
-                xxxxxxxxxxxxxxxxxx<br>
-                xxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+            <p>Wasant studio สาขา 2 หน้ามหาวิทยาลัยสยาม</p>
+            <hr align="left" width="50%">
+            <p>Wasant studio สาขา 3 ท่าพระ</p>
         </div>
-        <div class="col-md-4 footer-side">
-            <h3>
+
+        <div class="col-md-6 footer-right">
+            <h4 style="color: #ef810a">
                 Contact Us
-            </h3>
-            <hr align="left" width="80%">
-            <a href="https://www.facebook.com/Wasant-Studio-517995318300074/?fref=ts"><img src="{{ asset('resources/footer').'/facebook.png' }}"> wasant studio</a>
-            <a href="#"><img src="{{ asset('resources/footer').'/email.png' }}"> wasantstudio@hotmail.com</a>
-            <a href="tel:+6628788988"><img src="{{ asset('resources/footer').'/call.png' }}"> @wasantstudio</a>
+            </h4>
+            <div class="shabu-social">
+                <a href="https://www.facebook.com/"><img
+                            src="{{ asset('resources/footer').'/facebook.png' }}"></a>
+                <a href="#"><img src="{{ asset('resources/footer').'/instagram.png' }}"></a>
+                <a href="#"><img src="{{ asset('resources/footer').'/Line.png' }}"></a>
+                <a href="#"><img src="{{ asset('resources/footer').'/twitter.png' }}"></a>
+            </div>
+            <div class="shabu-contact">
+                <h5>shabubuteung@gmail.com</h5>
+                <h5>088-251-1269,0823820505</h5>
+            </div>
         </div>
     </div>
 </footer>

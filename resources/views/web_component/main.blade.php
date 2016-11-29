@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <!-- Theme Made By www.w3schools.com - No Copyright -->
-    <title>Wasant Studios</title>
+    <title>ชาบู บู๊ตึ๋ง</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -30,7 +30,6 @@
 
 <div class="wrapper">
     <div class="container" id="container">
-        @include('web_component.menu')
         @yield('content')
     </div>
 </div>

@@ -1,4 +1,8 @@
 body {
     font-family: 'Athiti', sans-serif;
     color: #1c2840;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    /*background-color: #;*/
 }

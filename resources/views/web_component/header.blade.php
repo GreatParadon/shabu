@@ -1,44 +1,42 @@
 <style>
 
     #owl-index .item img {
+        margin-top: 0;
         display: block;
         width: 100%;
     }
 
-    .wasant-logo {
-        background-color: rgba(255, 255, 255, 0.8);
-        position: absolute;
-        top: 15%;
-        left: 15%;
-        right: 15%;
-        bottom: 15%;
-        padding-bottom: 25px;
+    .shabu-logo_bg {
+        width: 100%;
     }
 
-    .wasant-logo div img {
+    .shabu-logo {
+        top: 10%;
+        bottom: 10%;
+        left: 45%;
+        right: 45%;
+        position: absolute;
         display: block;
-        margin: 0 auto;
-        /*max-width: 100%;*/
-        width: 30%;
-        height: auto;
+        width: 11%;
     }
 
 </style>
 
-<div class="row">
+<div class="row shabu-header">
+    <div class="col-md-12">
+        <img class="shabu-logo_bg" src="{{ asset('resources/header/logo_bg.png') }}">
+        <img class="shabu-logo" src="{{ asset('resources/header/logo.png') }}">
+    </div>
+</div>
+
+@include('web_component.menu')
+
+<div class="row shabu-banner">
     <div class="col-md-12">
         <div id="owl-index" class="owl-carousel owl-theme">
-            @foreach(['header1'] as $r)
-                <div class="item"><img src="{{ asset('resources/banner').'/'.$r.'.png' }}"></div>
+            @foreach(['banner1.png','header1.png'] as $r)
+                <div class="item"><img src="{{ asset('resources/banner').'/'.$r }}"></div>
             @endforeach
-        </div>
-        <div class="row wasant-logo">
-            <div class="col-md-12">
-                <img src="{{ asset('resources/header').'/logo.png' }}">
-            </div>
-            <div class="col-md-12">
-                <img src="{{ asset('resources/header').'/logo_name.png' }}">
-            </div>
         </div>
     </div>
 </div>

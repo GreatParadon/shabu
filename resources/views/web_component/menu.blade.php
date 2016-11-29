@@ -1,81 +1,89 @@
 <style>
 
     .navbar {
-        background-color: #1c2840;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        text-align: center;
-        border-radius: 0px;
-        font-size: 20px;
+        background-color: #2b2b2b;
+        border-radius: 0;
+        margin-bottom: 0;
+        height: 0;
+    }
+
+    .nav > li {
+        width: 100px;
+        border-right: 2px solid #ef810a;
     }
 
     .nav > li > a {
-        border-radius: 0px;
+        border-radius: 0;
         color: #FFFFFF;
-        background-color: #1c2840;
-        border-left: 3px solid #FFFFFF;
+        background-color: #2b2b2b;
+    }
+
+    .nav > li:last-child {
+        border-right: none;
     }
 
     .nav > li > a:hover {
-        color: #1c2840;
-        background-color: #FFFFFF;
+        color: #ef810a;
+        background-color: #2b2b2b;
     }
 
     .nav > li > a:active {
-        color: #1c2840;
-        background-color: #FFFFFF;
+        color: #ef810a;
+        background-color: #2b2b2b;
     }
 
     .nav > li > a:focus {
-        color: #1c2840;
-        background-color: #FFFFFF;
+        color: #ef810a;
+        background-color: #2b2b2b;
     }
 
     .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
-        /* background-color: #eee; */
-        border-color: #1c2840;
+        border-color: #2b2b2b;
     }
 
-    .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
-        color: #1c2840;
-        background-color: #FFFFFF;
-    }
+    /*.nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {*/
+        /*color: #2b2b2b;*/
+        /*background-color: #FFFFFF;*/
+    /*}*/
 
-    .dropdown-menu {
-        background-color: #1c2840;
-        border-radius: 0px;
-    }
+    /*.dropdown-menu {*/
+    /*background-color: #2b2b2b;*/
+    /*border-radius: 0;*/
+    /*}*/
 
     .dropdown-menu > li > a {
         color: #FFFFFF;
     }
 
     .dropdown-menu > li > a:hover {
-        color: #1c2840;
-        background-color: #FFFFFF;
+        color: #ef810a;
+        background-color: #2b2b2b;
     }
 
     .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
-        color: #1c2840;
-        background-color: #FFFFFF;
+        color: #ef810a;
+        background-color: #2b2b2b;
     }
 
-    .wasant-menu-logo {
-        background-color: #050318;
-        float: left;
-        color: #ffffff;
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
     }
 
 </style>
-<nav class="navbar wasant-menu">
-    <ul class="nav nav-pills nav-justified">
-        <li class="wasant-menu-logo">
-            <img src="{{ asset('resources/menu/logo.png') }}">
-        </li>
-        <li><a href="/">Home</a></li>
-        <li><a href="/service">Our Service</a></li>
-        <li><a href="/gear">Gears</a></li>
-        <li><a href="/map">Maps</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-    </ul>
+
+<nav class="navbar shabu-menu" role="navigation">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="/">หน้าแรก</a></li>
+            <li><a href="/about">เกี่ยวกับเรา</a></li>
+            <li><a href="/branch">สาขา</a></li>
+            <li><a href="/promotion">โปรโมชั่น</a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
 </nav>
