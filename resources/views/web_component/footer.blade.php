@@ -1,15 +1,10 @@
 <style>
     footer {
+        margin-top: 50px;
         background-color: #2b2b2b;
         color: #FFFFFF;
         bottom: 0;
         height: auto;
-    }
-
-    .footer-middle img {
-        width: 40%;
-        display: block;
-        margin: 0 auto;
     }
 
     .footer-middle {

@@ -83,7 +83,6 @@
             <li><a href="/">หน้าแรก</a></li>
             <li><a href="/about">เกี่ยวกับเรา</a></li>
             <li><a href="/branch">สาขา</a></li>
-            <li><a href="/promotion">โปรโมชั่น</a></li>
         </ul>
     </div><!-- /.navbar-collapse -->
 </nav>
