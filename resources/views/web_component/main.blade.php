@@ -24,6 +24,12 @@
     <script src="{{ asset('plugins/owl-carousel/owl.carousel.js') }}"></script>
 
 </head>
+<style>
+    body {
+        background-image: url('{{ asset('resources/bg4.png') }}');
+        /*background-repeat: repeat;*/
+    }
+</style>
 <body>
 
 @include('web_component.header')

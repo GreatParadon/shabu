@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'category' => [['category', 'Service Category']],
-    'subcategory' => [['subcategory', 'Service']],
-    'promotion' => [['promotion', 'Promotion']],
+    'banner' => [['banner', 'Banner']],
+    'about' => [['about', 'About Us']],
+    'content' => [['content', 'Promotion & News']],
+    'branch' => [['branch', 'Branch']]
 ];

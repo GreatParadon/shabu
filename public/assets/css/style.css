@@ -5,11 +5,17 @@ body {
     display: block;
     margin: 0 auto;
     background-color: #f0f2f4;
-    /*background-color: #;*/
 }
 
 .wrapper {
     width: 80%;
     display: block;
     margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+.panel-title {
+    font-weight: bold;
+    font-size: large;
 }

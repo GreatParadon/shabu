@@ -1,6 +1,6 @@
 <style>
     footer {
-        margin-top: 50px;
+        margin-top: 30px;
         background-color: #2b2b2b;
         color: #FFFFFF;
         bottom: 0;
@@ -14,13 +14,14 @@
     }
 
     .footer-left {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
+        top: 20px;
+        bottom: 20px;
+        left: 30px;
     }
 
     .footer-right {
-        padding-top: 20px;
+        top: 20px;
+        right: 30px;
         text-align: right;
     }
 
@@ -44,9 +45,9 @@
             <img src="{{ asset('resources/header').'/logo.png' }}">
         </div>
         <div class="col-md-4 footer-middle">
-            <p>Wasant studio สาขา 2 หน้ามหาวิทยาลัยสยาม</p>
+            <p>ชาบูบู๊ตึ๊งBoo-Tueng</p>
             <hr align="left" width="50%">
-            <p>Wasant studio สาขา 3 ท่าพระ</p>
+            <p>ชาบูบู๊ตึ๊งBoo-Tueng</p>
         </div>
 
         <div class="col-md-6 footer-right">
@@ -54,15 +55,15 @@
                 Contact Us
             </h4>
             <div class="shabu-social">
-                <a href="https://www.facebook.com/"><img
+                <a href="https://www.facebook.com/shabubooTueg/"><img
                             src="{{ asset('resources/footer').'/facebook.png' }}"></a>
                 <a href="#"><img src="{{ asset('resources/footer').'/instagram.png' }}"></a>
-                <a href="#"><img src="{{ asset('resources/footer').'/Line.png' }}"></a>
+                <a href="https://page.line.me/shabubootueng"><img src="{{ asset('resources/footer').'/Line.png' }}"></a>
                 <a href="#"><img src="{{ asset('resources/footer').'/twitter.png' }}"></a>
             </div>
             <div class="shabu-contact">
-                <h5>shabubuteung@gmail.com</h5>
-                <h5>088-251-1269,0823820505</h5>
+                <h5>jvong1988@gmail.com</h5>
+                <h5>Tel: 094 165 6449</h5>
             </div>
         </div>
     </div>

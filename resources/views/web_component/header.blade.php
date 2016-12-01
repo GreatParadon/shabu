@@ -34,8 +34,11 @@
 <div class="row shabu-banner">
     <div class="col-md-12">
         <div id="owl-index" class="owl-carousel owl-theme">
-            @foreach(['banner1.png','header1.png'] as $r)
-                <div class="item"><img src="{{ asset('resources/banner').'/'.$r }}"></div>
+            <?php
+            $banner = \App\Models\Banner::where('active', 1)->orderBy('seq', 'ASC')->get();
+            ?>
+            @foreach($banner as $r)
+                <div class="item"><img src="{{ filePath('banner',$r->image) }}"></div>
             @endforeach
         </div>
     </div>
@@ -48,7 +51,8 @@
             slideSpeed: 200,
             paginationSpeed: 800,
             singleItem: true,
-            pagination: true
+            pagination: false,
+            autoPlay:true
 
         });
 

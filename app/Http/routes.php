@@ -1,37 +1,27 @@
 <?php
 
-Route::group(['middleware' => 'api', 'prefix' => 'api', 'namespace' => 'Api'], function () {
-
-    Route::resource('category', 'CategoryController');
-    Route::resource('subcategory', 'SubCategoryController');
-    Route::get('allplace', 'CategoryController@allPlace');
-
-});
-
 Route::auth();
 
 Route::get('admin', 'BaseController@dashboard');
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
-    Route::get('category/sort', 'CategoryController@sortPage');
-    Route::post('category/sort', 'CategoryController@sort');
-    Route::resource('category', 'CategoryController');
+    Route::get('banner/sort', 'BannerController@sortPage');
+    Route::post('banner/sort', 'BannerController@sort');
+    Route::resource('banner', 'BannerController');
 
-    Route::get('subcategory/sort', 'SubCategoryController@sortPage');
-    Route::post('subcategory/sort', 'SubCategoryController@sort');
-    Route::resource('subcategory', 'SubCategoryController');
+    Route::get('content/sort', 'ContentController@sortPage');
+    Route::post('content/sort', 'ContentController@sort');
+    Route::resource('content', 'ContentController');
 
-    Route::get('promotion/sort', 'PromotionController@sortPage');
-    Route::post('promotion/sort', 'PromotionController@sort');
-    Route::resource('promotion', 'PromotionController');
+    Route::get('branch/sort', 'BranchController@sortPage');
+    Route::post('branch/sort', 'BranchController@sort');
+    Route::resource('branch', 'BranchController');
 
-    Route::delete('gallery/{id}', 'SubCategoryController@galleryDestroy');
-    Route::post('gallery', 'SubCategoryController@galleryUpload');
+    Route::resource('about', 'AboutController');
 
-    Route::resource('checkout', 'CheckoutController');
-
-    Route::resource('webuser', 'WebUserController');
+//    Route::delete('gallery/{id}', 'SubCategoryController@galleryDestroy');
+//    Route::post('gallery', 'SubCategoryController@galleryUpload');
 
 });
 
@@ -39,23 +29,12 @@ Route::post('wysiwyg_upload', 'BaseController@wysiwygUpload');
 
 
 Route::group(['namespace' => 'Web'], function () {
-    Route::get('', function () {
-        $promotion = \App\Models\Promotion::where('active', 1)->get();
+    Route::get('', 'WebController@index');
+    Route::get('about', 'WebController@about');
+    Route::resource('branch', 'BranchController');
 
-        return view('web.index', compact('promotion'));
-    });
-
-    Route::get('service', function () {
-        $service = \App\Models\Category::select('id', 'title')->where('active', 1)->get();
-        foreach ($service as $r) {
-//            $r->service_image = '2';
-//            $service_image = \App\Models\SubCategory::select('image')->where('category_id', $r->id)->where('active', 1)->get()->pluck('image');
-            $r->service_image = \App\Models\SubCategory::select('image')->where('category_id', $r->id)->where('active', 1)->get();
-        }
-
-//        dd($service);
-
-        return view('web.service', compact('service'));
+    Route::group(['prefix' => 'content'], function () {
+        Route::get('{id}', 'ContentController@index');
     });
 
     Route::get('{web}', function ($web) {
