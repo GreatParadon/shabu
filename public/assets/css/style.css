@@ -1,14 +1,14 @@
 body {
     font-family: 'Athiti', sans-serif;
     color: #1c2840;
-    width: 100%;
+    width: 80%;
     display: block;
     margin: 0 auto;
     background-color: #f0f2f4;
 }
 
 .wrapper {
-    width: 80%;
+    width: 100%;
     display: block;
     margin: 0 auto;
     margin-top: 20px;

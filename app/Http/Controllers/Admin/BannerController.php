@@ -12,10 +12,16 @@ class BannerController extends BaseController
         ['field' => 'title', 'type' => 'text', 'label' => 'Title'],
         ['field' => 'image', 'type' => 'image', 'label' => 'Logo'],
         ['field' => 'active', 'type' => 'checkbox', 'label' => 'Active']];
-    protected $create = true;
-    protected $edit = true;
-    protected $delete = true;
-    protected $sort = true;
+
+    protected function feature()
+    {
+        return [
+            'create' => true,
+            'edit' => true,
+            'delete' => true,
+            'sort' => true
+        ];
+    }
 
     protected function model()
     {

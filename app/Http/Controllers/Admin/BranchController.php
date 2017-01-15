@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\BaseController;
 use App\Models\Branch;
+use App\Models\BranchImage;
 
 class BranchController extends BaseController
 {
@@ -12,14 +13,33 @@ class BranchController extends BaseController
         ['field' => 'title', 'type' => 'text', 'label' => 'Title'],
         ['field' => 'image', 'type' => 'image', 'label' => 'Logo'],
         ['field' => 'active', 'type' => 'checkbox', 'label' => 'Active']];
-    protected $create = true;
-    protected $edit = true;
-    protected $delete = true;
-    protected $sort = true;
+    protected $gallery_id_name = 'branch_id';
+
+    protected function feature()
+    {
+        return [
+            'create' => true,
+            'edit' => true,
+            'delete' => true,
+            'sort' => true
+        ];
+    }
+
+    protected function tab()
+    {
+        return [
+            'gallery'
+        ];
+    }
 
     protected function model()
     {
         return new Branch();
+    }
+
+    protected function model_gallery()
+    {
+        return new BranchImage();
     }
 
     protected function formData()

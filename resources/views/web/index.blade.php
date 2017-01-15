@@ -45,46 +45,33 @@
             font-size: large;
         }
 
+        .branch-link, .branch-link:hover {
+            color: #ef810a;
+            text-decoration: none;
+        }
+
+        /*, .branch-link:active {*/
+        /*color: #ef810a;*/
+        /*}*/
+
     </style>
 
     <div class="row content">
-        <div class="col-md-4">{{--
+        <div class="col-md-4">
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel">
                         <div class="panel-heading content-heading">
-                            <h4 class="panel-title">ข่าวสาร</h4>
+                            <h4 class="panel-title">สาขา</h4>
                         </div>
                         <div class="panel-body">
-                            @forelse($news as $r)
-                                <div class="row">
-                                    <div class="col-md-12">
-
-                                    </div>
-                                </div>
+                            @forelse($branch as $r)
+                                <a href="{{ url('branch').'/'.$r->id }}" class="branch-link">
+                                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                                    {{ $r->title }}</a>
                             @empty
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        พบกันในเร็วๆนี้
-                                    </div>
-                                </div>
+                                พบกันในเร็วๆนี้
                             @endforelse
-                        </div>
-                    </div>
-                </div>
-            </div>--}}
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="panel">
-                        <div class="panel-heading content-heading">
-                            <h4 class="panel-title">ติดตาม</h4>
-                        </div>
-                        <div class="panel-body">
-                            พบกันในเร็วๆนี้
-                            {{--<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLa-Maison-De-VALLE-546413978892930%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=977149125690271"
-                                    style="width: 100%; height: 496px; border:none; overflow:hidden" scrolling="no"
-                                    frameborder="0"
-                                    allowTransparency="true"></iframe>--}}
                         </div>
                     </div>
                 </div>
@@ -93,16 +80,16 @@
         <div class="col-md-8">
             <div class="panel">
                 <div class="panel-heading content-heading">
-                    <h4 class="panel-title">ข่าว & โปรโมชั่น</h4>
+                    <h4 class="panel-title">ข่าวสาร & โปรโมชั่น</h4>
                 </div>
                 <div class="panel-body">
                     <div class="row">
                         @forelse($content as $r)
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="panel sub-promotion" onclick="contentPage({{ $r->id }})">
                                     <div class="panel-heading" style="background-color: #FFF3E0; padding: 0">
                                         <img src="{{ filePath('content', $r->image) }}"
-                                             style="height: 20%; width: 30%; display: block; margin: 0 auto;">
+                                             style="height: 200px; display: block; margin: 0 auto;">
                                     </div>
                                     <div class="panel-body">
                                         <div class="row">
@@ -122,7 +109,7 @@
                             </div>
                         @endforelse
                     </div>
-
+                    {!! $content->links() !!}
                 </div>
             </div>
         </div>

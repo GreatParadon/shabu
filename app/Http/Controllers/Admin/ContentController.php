@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\BaseController;
 use App\Models\Content;
+use App\Models\ContentImage;
 
 class ContentController extends BaseController
 {
@@ -12,14 +13,33 @@ class ContentController extends BaseController
         ['field' => 'title', 'type' => 'text', 'label' => 'Title'],
         ['field' => 'image', 'type' => 'image', 'label' => 'Logo'],
         ['field' => 'active', 'type' => 'checkbox', 'label' => 'Active']];
-    protected $create = true;
-    protected $edit = true;
-    protected $delete = true;
-    protected $sort = false;
+    protected $gallery_id_name = 'content_id';
+
+    protected function feature()
+    {
+        return [
+            'create' => true,
+            'edit' => true,
+            'delete' => true,
+            'sort' => false
+        ];
+    }
+
+    protected function tab()
+    {
+        return [
+            'gallery'
+        ];
+    }
 
     protected function model()
     {
         return new Content();
+    }
+
+    protected function model_gallery()
+    {
+        return new ContentImage();
     }
 
     protected function formData()

@@ -8,12 +8,18 @@ use App\Models\About;
 class AboutController extends BaseController
 {
     protected $page = ['title' => 'About', 'content' => 'about'];
-    protected $list_data = [
+    protected $list_data = [['field' => 'id', 'type' => 'number', 'label' => 'ID'],
         ['field' => 'title', 'type' => 'text', 'label' => 'Title']];
-    protected $create = false;
-    protected $edit = true;
-    protected $delete = false;
-    protected $sort = false;
+
+    protected function feature()
+    {
+        return [
+            'create' => false,
+            'edit' => true,
+            'delete' => false,
+            'sort' => false
+        ];
+    }
 
     protected function model()
     {

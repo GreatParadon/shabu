@@ -20,9 +20,10 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin'], function () {
 
     Route::resource('about', 'AboutController');
 
-//    Route::delete('gallery/{id}', 'SubCategoryController@galleryDestroy');
-//    Route::post('gallery', 'SubCategoryController@galleryUpload');
-
+    foreach (['content', 'branch'] as $r) {
+        Route::delete($r . '/gallery/{id}', ucfirst($r) . 'Controller@galleryDestroy');
+        Route::post($r . '/gallery', ucfirst($r) . 'Controller@galleryUpload');
+    }
 });
 
 Route::post('wysiwyg_upload', 'BaseController@wysiwygUpload');
